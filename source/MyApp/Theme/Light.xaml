@@ -1,0 +1,202 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary
+    x:Class="MyApp.Theme.Light"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:styles="clr-namespace:MyApp.Theme.Style">
+
+    <ResourceDictionary.MergedDictionaries>
+        <styles:ConverterStyle />
+        <styles:ColorStyle />
+        <styles:FontStyle />
+        <styles:SizeStyle />
+    </ResourceDictionary.MergedDictionaries>
+
+    <Style
+        x:Key="Label12"
+        TargetType="Label">
+        <Setter Property="TextColor" Value="{DynamicResource BlackColor}" />
+        <Setter Property="FontFamily" Value="{StaticResource RegularFont}" />
+        <Setter Property="FontSize" Value="{StaticResource Size12}" />
+    </Style>
+
+    <Style
+        x:Key="Label12Bold"
+        TargetType="Label">
+        <Setter Property="TextColor" Value="{DynamicResource BlackColor}" />
+        <Setter Property="FontFamily" Value="{StaticResource BoldFont}" />
+        <Setter Property="FontSize" Value="{StaticResource Size12}" />
+    </Style>
+
+    <Style
+        x:Key="Label12ExtraBold"
+        TargetType="Label">
+        <Setter Property="TextColor" Value="{DynamicResource BlackColor}" />
+        <Setter Property="FontFamily" Value="{StaticResource ExtraBoldFont}" />
+        <Setter Property="FontSize" Value="{StaticResource Size12}" />
+    </Style>
+
+
+
+    <Style
+        x:Key="Label14"
+        TargetType="Label">
+        <Setter Property="TextColor" Value="{DynamicResource BlackColor}" />
+        <Setter Property="FontFamily" Value="{StaticResource RegularFont}" />
+        <Setter Property="FontSize" Value="{StaticResource Size14}" />
+    </Style>
+
+    <Style
+        x:Key="Label14Bold"
+        TargetType="Label">
+        <Setter Property="TextColor" Value="{DynamicResource BlackColor}" />
+        <Setter Property="FontFamily" Value="{StaticResource BoldFont}" />
+        <Setter Property="FontSize" Value="{StaticResource Size14}" />
+    </Style>
+
+    <Style
+        x:Key="Label14ExtraBold"
+        TargetType="Label">
+        <Setter Property="TextColor" Value="{DynamicResource BlackColor}" />
+        <Setter Property="FontFamily" Value="{StaticResource ExtraBoldFont}" />
+        <Setter Property="FontSize" Value="{StaticResource Size14}" />
+    </Style>
+
+
+
+    <Style
+        x:Key="Label16"
+        TargetType="Label">
+        <Setter Property="TextColor" Value="{DynamicResource BlackColor}" />
+        <Setter Property="FontFamily" Value="{StaticResource RegularFont}" />
+        <Setter Property="FontSize" Value="{StaticResource Size16}" />
+    </Style>
+
+    <Style
+        x:Key="Label16Bold"
+        TargetType="Label">
+        <Setter Property="TextColor" Value="{DynamicResource BlackColor}" />
+        <Setter Property="FontFamily" Value="{StaticResource BoldFont}" />
+        <Setter Property="FontSize" Value="{StaticResource Size16}" />
+    </Style>
+
+    <Style
+        x:Key="Label16ExtraBold"
+        TargetType="Label">
+        <Setter Property="TextColor" Value="{DynamicResource BlackColor}" />
+        <Setter Property="FontFamily" Value="{StaticResource ExtraBoldFont}" />
+        <Setter Property="FontSize" Value="{StaticResource Size16}" />
+    </Style>
+
+
+
+    <Style
+        x:Key="Label18"
+        TargetType="Label">
+        <Setter Property="TextColor" Value="{DynamicResource BlackColor}" />
+        <Setter Property="FontFamily" Value="{StaticResource RegularFont}" />
+        <Setter Property="FontSize" Value="{StaticResource Size18}" />
+    </Style>
+
+    <Style
+        x:Key="Label18Bold"
+        TargetType="Label">
+        <Setter Property="TextColor" Value="{DynamicResource BlackColor}" />
+        <Setter Property="FontFamily" Value="{StaticResource BoldFont}" />
+        <Setter Property="FontSize" Value="{StaticResource Size18}" />
+    </Style>
+
+    <Style
+        x:Key="Label18ExtraBold"
+        TargetType="Label">
+        <Setter Property="TextColor" Value="{DynamicResource BlackColor}" />
+        <Setter Property="FontFamily" Value="{StaticResource ExtraBoldFont}" />
+        <Setter Property="FontSize" Value="{StaticResource Size18}" />
+    </Style>
+
+
+
+    <Style
+        x:Key="Label20"
+        TargetType="Label">
+        <Setter Property="TextColor" Value="{DynamicResource BlackColor}" />
+        <Setter Property="FontFamily" Value="{StaticResource RegularFont}" />
+        <Setter Property="FontSize" Value="{StaticResource Size20}" />
+    </Style>
+
+    <Style
+        x:Key="Label20Bold"
+        TargetType="Label">
+        <Setter Property="TextColor" Value="{DynamicResource BlackColor}" />
+        <Setter Property="FontFamily" Value="{StaticResource BoldFont}" />
+        <Setter Property="FontSize" Value="{StaticResource Size20}" />
+    </Style>
+
+    <Style
+        x:Key="Label20ExtraBold"
+        TargetType="Label">
+        <Setter Property="TextColor" Value="{DynamicResource BlackColor}" />
+        <Setter Property="FontFamily" Value="{StaticResource ExtraBoldFont}" />
+        <Setter Property="FontSize" Value="{StaticResource Size20}" />
+    </Style>
+
+    <Style
+        x:Key="Label32ExtraBold"
+        TargetType="Label">
+        <Setter Property="TextColor" Value="{DynamicResource BlackColor}" />
+        <Setter Property="FontFamily" Value="{StaticResource ExtraBoldFont}" />
+        <Setter Property="FontSize" Value="{StaticResource Size32}" />
+    </Style>
+
+    <Style
+        x:Key="ContentPageDefault"
+        ApplyToDerivedTypes="True"
+        TargetType="ContentPage">
+        <Setter Property="BackgroundColor" Value="{DynamicResource Gray100}" />
+    </Style>
+
+    <Style
+        x:Key="ActivityIndicatorStyleDefault"
+        TargetType="ActivityIndicator">
+        <Setter Property="Color" Value="{DynamicResource BlackColor}" />
+        <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+        <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+        <Setter Property="HeightRequest" Value="32" />
+        <Setter Property="WidthRequest" Value="32" />
+    </Style>
+
+    <Style
+        x:Key="HeaderDefault"
+        TargetType="StackLayout">
+        <Setter Property="BackgroundColor" Value="{DynamicResource Gray200}" />
+    </Style>
+
+    <Style
+        x:Key="ButtonPrimary"
+        TargetType="Button">
+        <Setter Property="BackgroundColor" Value="{DynamicResource Blue600Color}" />
+        <Setter Property="TextColor" Value="{DynamicResource WhiteColor}" />
+        <Setter Property="BorderWidth" Value="0" />
+        <Setter Property="FontFamily" Value="{DynamicResource BoldFont}" />
+        <Setter Property="FontSize" Value="{DynamicResource Size16}" />
+        <Setter Property="CornerRadius" Value="{DynamicResource CornerRadiusButton}" />
+        <Setter Property="HeightRequest" Value="{DynamicResource HeightButton}" />
+        <Setter Property="VerticalOptions" Value="Center" />
+    </Style>
+
+    <Style
+        x:Key="LaunchFramePrimary"
+        TargetType="Frame">
+        <Setter Property="BackgroundColor" Value="{DynamicResource Gray200}" />
+        <Setter Property="BorderColor" Value="{DynamicResource Gray200}" />
+        <Setter Property="HasShadow" Value="False" />
+    </Style>
+
+    <Style
+        x:Key="ShellDefaultStyle"
+        TargetType="Shell">
+        <Setter Property="Shell.TitleColor" Value="{DynamicResource black}" />
+        <Setter Property="Shell.ForegroundColor" Value="{DynamicResource BlackColor}" />
+        <Setter Property="BackgroundColor" Value="{DynamicResource Gray200}" />
+    </Style>
+</ResourceDictionary>

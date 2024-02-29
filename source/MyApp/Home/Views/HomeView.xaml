@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="MyApp.Home.Views.HomeView"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:constants="clr-namespace:MyApp.Utils.Constants"
+    xmlns:shared="clr-namespace:MyApp.Shared.Components"
+    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+    x:Name="Home"
+    Shell.NavBarIsVisible="False"
+    Style="{DynamicResource ContentPageDefault}">
+    <Grid
+        RowDefinitions="80, 1*"
+        RowSpacing="0">
+        <StackLayout
+            Grid.Row="0"
+            Margin="0,-2,0,0"
+            Padding="16,0,0,0"
+            Style="{DynamicResource HeaderDefault}">
+            <Image
+                HeightRequest="30"
+                Source="spacexlogo.png"
+                VerticalOptions="FillAndExpand" />
+        </StackLayout>
+
+        <ScrollView
+            Grid.Row="1"
+            Padding="8,0">
+            <StackLayout>
+                <Grid>
+                    <StackLayout
+                        BindableLayout.ItemsSource="{Binding Model.LauchList}"
+                        IsVisible="{Binding IsBusy, Converter={StaticResource InverseBoolConverter}}">
+                        <BindableLayout.ItemTemplate>
+                            <DataTemplate>
+                                <Frame
+                                    Margin="8"
+                                    Padding="0"
+                                    Style="{DynamicResource LaunchFramePrimary}">
+                                    <Grid
+                                        x:Name="AddTodoButton"
+                                        Padding="12,16"
+                                        AutomationId="AddTodoButton"
+                                        ColumnDefinitions="4*, 6*"
+                                        HeightRequest="150"
+                                        RowDefinitions="Auto">
+
+                                        <Image
+                                            Grid.Row="0"
+                                            Grid.Column="0"
+                                            HeightRequest="120"
+                                            Source="{Binding links.mission_patch_small}"
+                                            VerticalOptions="CenterAndExpand"
+                                            WidthRequest="120" />
+
+                                        <VerticalStackLayout
+                                            Grid.Row="0"
+                                            Grid.Column="1">
+                                            <Label
+                                                Style="{DynamicResource Label18ExtraBold}"
+                                                Text="{Binding mission_name}" />
+
+                                            <Label
+                                                Style="{DynamicResource Label14Bold}"
+                                                Text="{Binding rocket.rocket_name}" />
+
+                                            <Label
+                                                Margin="0,0,0,5"
+                                                Style="{DynamicResource Label12Bold}"
+                                                Text="{Binding launch_date_local, StringFormat='{0:ddd, dd MMM yyyy}', TargetNullValue='not informed', FallbackValue='not informed'}" />
+
+                                            <BoxView
+                                                BackgroundColor="transparent"
+                                                HeightRequest="10" />
+
+                                            <Label
+                                                Style="{DynamicResource Label12Bold}"
+                                                Text="Launch success:" />
+
+                                            <Label
+                                                Margin="0,0,0,0"
+                                                Style="{DynamicResource Label14Bold}"
+                                                Text="{Binding Status}"
+                                                TextColor="{Binding StatusColor}" />
+                                        </VerticalStackLayout>
+
+                                        <Grid.GestureRecognizers>
+                                            <TapGestureRecognizer
+                                                Command="{Binding Source={x:Reference Home}, Path=BindingContext.DoItemCommand}"
+                                                CommandParameter="{Binding .}" />
+                                        </Grid.GestureRecognizers>
+                                    </Grid>
+                                </Frame>
+                            </DataTemplate>
+                        </BindableLayout.ItemTemplate>
+                    </StackLayout>
+
+                    <ActivityIndicator
+                        Margin="0,380,0,0"
+                        IsRunning="True"
+                        IsVisible="{Binding IsBusy}"
+                        Style="{DynamicResource ActivityIndicatorStyleDefault}" />
+                </Grid>
+            </StackLayout>
+        </ScrollView>
+    </Grid>
+</ContentPage>

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="MyApp.Detail.View.DetailView"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:constants="clr-namespace:MyApp.Utils.Constants"
+    Title="Launcher Detail"
+    Style="{DynamicResource ContentPageDefault}">
+    <Grid>
+        <VerticalStackLayout
+            Padding="16"
+            IsVisible="{Binding IsBusy, Converter={StaticResource InverseBoolConverter}}"
+            Spacing="12">
+
+            <Image
+                HeightRequest="220"
+                Source="{Binding Model.Launch.links.mission_patch_small}"
+                VerticalOptions="FillAndExpand" />
+
+            <Label
+                HorizontalOptions="CenterAndExpand"
+                Style="{DynamicResource Label32ExtraBold}"
+                Text="{Binding Model.Launch.mission_name}" />
+
+            <Label
+                HorizontalOptions="Center"
+                Style="{DynamicResource Label16Bold}"
+                Text="{Binding Model.Launch.launch_date_local, StringFormat='{0:ddd, dd MMM yyyy}', TargetNullValue='not informed', FallbackValue='not informed'}" />
+
+            <Label
+                Margin="0,-16,0,0"
+                HorizontalOptions="Center"
+                Style="{DynamicResource Label16Bold}"
+                Text="{Binding Model.Launch.Status}"
+                TextColor="{Binding Model.Launch.StatusColor}" />
+
+            <Label
+                Margin="0,0,0,16"
+                HorizontalTextAlignment="Center"
+                Style="{DynamicResource Label14}"
+                Text="{Binding Model.Launch.details}"
+                VerticalTextAlignment="Center" />
+
+            <Frame
+                Padding="0"
+                Style="{DynamicResource LaunchFramePrimary}">
+                <Grid
+                    Margin="0"
+                    ColumnDefinitions="7*,4*"
+                    ColumnSpacing="12">
+
+                    <Label
+                        Margin="16,0,0,0"
+                        HorizontalOptions="End"
+                        Style="{DynamicResource Label16}"
+                        Text="Watch this lauch"
+                        VerticalOptions="Center" />
+
+                    <Image
+                        Grid.Column="1"
+                        HeightRequest="30"
+                        HorizontalOptions="Start"
+                        Source="youtube.png"
+                        WidthRequest="30" />
+                </Grid>
+
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer
+                        Command="{Binding DoOpenLaunchVideoCommand}" />
+                </Frame.GestureRecognizers>
+            </Frame>
+
+            <Label
+                Margin="0,16,0,0"
+                Style="{DynamicResource Label16ExtraBold}"
+                Text="Lauch Images:" />
+
+            <ScrollView
+                Orientation="Horizontal">
+                <StackLayout
+                    BindableLayout.ItemsSource="{Binding Model.Launch.links.flickr_images}"
+                    Orientation="Horizontal"
+                    Spacing="12">
+                    <BindableLayout.ItemTemplate>
+                        <DataTemplate>
+                            <Image
+                                Aspect="AspectFill"
+                                HeightRequest="160"
+                                Source="{Binding}"
+                                WidthRequest="140" />
+                        </DataTemplate>
+                    </BindableLayout.ItemTemplate>
+                </StackLayout>
+            </ScrollView>
+        </VerticalStackLayout>
+
+        <ActivityIndicator
+            HeightRequest="32"
+            HorizontalOptions="CenterAndExpand"
+            IsRunning="True"
+            IsVisible="{Binding IsBusy}"
+            VerticalOptions="CenterAndExpand"
+            WidthRequest="32" />
+    </Grid>
+</ContentPage>

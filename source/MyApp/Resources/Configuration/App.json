@@ -1,0 +1,8 @@
+{
+  "Api": {
+    "prod": "https://api.spacexdata.com",
+    "homol": "https://api.spacexdata.com",
+    "debug": "https://api.spacexdata.com",
+    "staging": "https://api.spacexdata.com"
+  }
+}

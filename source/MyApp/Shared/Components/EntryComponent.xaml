@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView 
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:const="clr-namespace:MyApp.Utils.Constants"
+    x:Class="MyApp.Shared.Components.EntryComponent" x:Name="Component">
+    <Frame 
+        x:Name="frame" 
+        BorderColor="{DynamicResource Gray100}" 
+        Padding="5" 
+        BackgroundColor="{DynamicResource Gray100}" 
+        HeightRequest="50">
+        <Entry 
+            MaxLength="{Static  const:SharedConstant.MaxLength}" 
+            FontFamily="{DynamicResource RegularFont}" 
+            FontSize="18" HeightRequest="100"
+            x:Name="myEntry" 
+            Text="{Binding Text, Source={x:Reference Component}}" 
+            Placeholder="Digite aqui..." />
+    </Frame>
+</ContentView>
